@@ -11,13 +11,14 @@
 
     </thead>
     <tbody *ngIf="users">
-        <tr *ngFor="let user of users | async">
-            <th>{{ user.id }}</th>
+        <tr *ngFor="let user of users">
+            {{user.name}}
+            <!--     <th>{{ user.id }}</th>
             <th>{{ user.name }}</th>
             <th>{{ user.username }}</th>
             <th>{{ user.email }}</th>
             <th>{{ user.website }}</th>
-            <th>{{ user.company.name }}</th>
+            <th>{{ user.company.name }}</th> -->
         </tr>
     </tbody>
 

@@ -7,15 +7,29 @@ import { UsersService } from '../service/users.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+  offset = 0;
   users: any;
+  waitOnResponse = false;
   constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
-    this.users = this.usersService.getUsers();
+    this.usersService.getUsers(this.offset)
+      .subscribe(response => {
+        this.users = JSON.parse(JSON.stringify(response)).docs;
+        this.offset += this.users.length;
+      });
   }
 
   onScroll() {
-    console.log('scrolling');
+    if (!this.waitOnResponse) {
+      this.waitOnResponse = true;
+      this.usersService.getUsers(this.offset)
+        .subscribe(response => {
+          const docs = JSON.parse(JSON.stringify(response)).docs;
+          this.users.push(...docs);
+          this.offset += this.users.length;
+          this.waitOnResponse = false;
+        });
+    }
   }
-
 }
