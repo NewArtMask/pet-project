@@ -16,11 +16,17 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ua": "src/locale/messages.ua.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pet-project",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -36,6 +42,11 @@
             "scripts": []
           },
           "configurations": {
+            "ua": {
+              "localize": [
+                "ua"
+              ]
+            },
             "production": {
               "budgets": [
                 {
@@ -76,6 +87,9 @@
             },
             "development": {
               "browserTarget": "pet-project:build:development"
+            },
+            "ua": {
+              "browserTarget": "pet-project:build:ua"
             }
           },
           "defaultConfiguration": "development"
