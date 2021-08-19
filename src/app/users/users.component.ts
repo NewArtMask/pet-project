@@ -10,6 +10,7 @@ export class UsersComponent implements OnInit {
   offset = 0;
   users: any;
   waitOnResponse = false;
+  filterTerm!: string;
   constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {

@@ -11,6 +11,8 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { UserComponent } from './user/user.component';
     AppRoutingModule,
     MdbCheckboxModule,
     HttpClientModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    Ng2SearchPipeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
