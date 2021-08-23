@@ -5,23 +5,22 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsersService {
-  apiURL = 'https://the-one-api.dev/v2';
-  // apiURL = 'https://jsonplaceholder.typicode.com/users';
+  apiURL = 'https://dummyapi.io/data/v1';
 
   constructor(private http: HttpClient) { }
 
-  getUsers(offset: number) {
-    return this.http.get(`${this.apiURL}/character?offset=${offset}&limit=5`, {
+  getUsers(page: number) {
+    return this.http.get(`${this.apiURL}/user?page=${page}&limit=5`, {
       headers: {
-        'Authorization': 'Bearer sUxFhZvnkYN1MAyx6dpe'
+        'app-id': '6122c7f4a99ae1923a8fd79f'
       }
     });
   }
   //'/features/:id/:username'
   getUser(id: string) {
-    return this.http.get(`${this.apiURL}/character/${id}`, {
+    return this.http.get(`${this.apiURL}/user/${id}`, {
       headers: {
-        'Authorization': 'Bearer sUxFhZvnkYN1MAyx6dpe'
+        'app-id': '6122c7f4a99ae1923a8fd79f'
       }
     });
   }

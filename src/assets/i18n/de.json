@@ -1,0 +1,36 @@
+{
+    "navbar": {
+        "home": "Startseite",
+        "users": "Benutzer"
+    },
+    "button": {
+        "lang": {
+            "ua": "Українська",
+            "en": "English",
+            "de": "Deutsch"
+        }
+    },
+    "users": {
+        "input": {
+            "placeholder": "Suche..."
+        },
+        "userInfo": "mehr..."
+    },
+    "user": {
+        "title": "Titel:",
+        "firstName": "Vorname:",
+        "lastName": "Nachname:",
+        "dateOfBirth": "Geburtsdatum:",
+        "gender": "Gender:",
+        "phone": "Telefon:",
+        "email": "E-Mail:",
+        "location": {
+            "homeAdress": "Privatadresse:",
+            "city": "Stadt/Dorf:",
+            "country": "Land:",
+            "state": "Bundesland:",
+            "street": "Straße:",
+            "timezone": "Zeitzone:"
+        }
+    }
+}

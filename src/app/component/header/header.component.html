@@ -9,28 +9,29 @@
             <div class="collapse navbar-collapse" id="navbarExample01">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" routerLink="" i18n>Home</a>
+                        <a class="nav-link" aria-current="page" routerLink="">{{ 'navbar.home' | translate }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="users" i18n>Users</a>
+                        <a class="nav-link" routerLink="users">{{ 'navbar.users' | translate }}</a>
                     </li>
-                    <!--     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false"
+                            (click)="dropdownVisible = !dropdownVisible" (clickOutside)="dropdownVisible = false">
+                            {{ 'button.lang.' + activeLanguage | translate }}
+                        </a>
+                        <ul class="dropdown-menu" [ngClass]="{'dropdownHide': !dropdownVisible}"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li *ngFor="let language of languages">
+                                <a id="{{language}}" class="dropdown-item" (click)="chooseLanguage(language)">
+                                    {{'button.lang.' + language | translate}}
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li> -->
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Navbar -->
-
-    <!-- Jumbotron -->
-    <!-- <div class="p-5 text-center bg-light">
-        <h1 class="mb-3">Heading</h1>
-        <h4 class="mb-3">Subheading</h4>
-        <a class="btn btn-primary" href="" role="button">Call to action</a>
-    </div> -->
-    <!-- Jumbotron -->
 </header>

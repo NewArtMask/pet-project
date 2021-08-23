@@ -1,7 +1,8 @@
 <div class="container mt-5">
 
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterTerm">
+        <input type="text" class="form-control" placeholder="{{ 'users.input.placeholder' | translate }}"
+            [(ngModel)]="filterTerm">
     </div>
 
     <div *ngIf="users">
@@ -9,19 +10,25 @@
             <section class="mx-auto my-5" style="max-width: 70%;">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title font-weight-bold">{{ user.name }}</h5>
+                        <img class="card-title" src="{{ user.picture }}" alt="user">
                         <p></p>
                         <div class="d-flex justify-content-between mb-4">
-                            <p><i class="fas fa-skull fa-lg text-info pe-2"></i>{{ user.race }}</p>
-                            <p><i class="fas fa-ring fa-lg text-warning pe-2"></i>Lord Of The Rings</p>
+                            <p><i class="fas fa-skull fa-lg text-info pe-2"></i>{{ 'user.title' | translate }}</p>
+                            <p><i class="fas fa-ring fa-lg text-warning pe-2"></i>{{ user.title }}</p>
                         </div>
                         <div class="d-flex justify-content-between mb-4" style="margin-top: -25px">
-                            <p><i class="fas fa-mercury fa-lg text-info pe-2"></i>{{ user.gender }}</p>
-                            <p><i class="fas fa-ring fa-lg text-warning pe-2"></i>Lord Of The Rings</p>
+                            <p><i class="fas fa-skull fa-lg text-info pe-2"></i>{{ 'user.firstName' | translate }}</p>
+                            <p><i class="fas fa-ring fa-lg text-warning pe-2"></i>{{ user.firstName }}</p>
+                        </div>
+                        <div class="d-flex justify-content-between mb-4" style="margin-top: -25px">
+                            <p><i class="fas fa-mercury fa-lg text-info pe-2"></i>{{ 'user.lastName' | translate }}</p>
+                            <p><i class="fas fa-ring fa-lg text-warning pe-2"></i>{{ user.lastName }}</p>
                         </div>
                         <hr />
                         <a class="btn btn-link link-info p-md-1 my-1"
-                            [routerLink]="['../features/',user._id, user.name]">Info</a>
+                            [routerLink]="['../features/', user.id, user.firstName + '_' + user.lastName]">
+                            {{ 'users.userInfo' | translate }}
+                        </a>
                     </div>
                 </div>
             </section>

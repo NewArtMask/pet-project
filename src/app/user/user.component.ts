@@ -19,7 +19,7 @@ export class UserComponent implements OnInit {
 
       this.usersService.getUser(this.id)
         .subscribe(response => {
-          this.user = JSON.parse(JSON.stringify(response)).docs[0];
+          this.user = JSON.parse(JSON.stringify(response));
         });
     });
   }

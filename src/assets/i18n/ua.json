@@ -1,0 +1,36 @@
+{
+    "navbar": {
+        "home": "Домашня",
+        "users": "Користувачі"
+    },
+    "button": {
+        "lang": {
+            "ua": "Українська",
+            "en": "English",
+            "de": "Deutsch"
+        }
+    },
+    "users": {
+        "input": {
+            "placeholder": "Пошук..."
+        },
+        "userInfo": "детальніше..."
+    },
+    "user": {
+        "title": "Титул:",
+        "firstName": "Ім'я:",
+        "lastName": "Прізвище:",
+        "dateOfBirth": "Дата народження:",
+        "gender": "Гендер:",
+        "phone": "Телефон:",
+        "email": "E-Mail:",
+        "location": {
+            "homeAdress": "Домашня адреса:",
+            "city": "Місто/Село:",
+            "country": "Країна:",
+            "state": "Регіон:",
+            "street": "Вулиця:",
+            "timezone": "Часовий пояс:"
+        }
+    }
+}
