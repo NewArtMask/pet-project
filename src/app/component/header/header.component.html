@@ -19,7 +19,7 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
                             data-mdb-toggle="dropdown" aria-expanded="false"
                             (click)="dropdownVisible = !dropdownVisible" (clickOutside)="dropdownVisible = false">
-                            {{ 'button.lang.' + activeLanguage | translate }}
+                            {{ 'button.lang.' + translate.currentLang | translate }}
                         </a>
                         <ul class="dropdown-menu" [ngClass]="{'dropdownHide': !dropdownVisible}"
                             aria-labelledby="navbarDropdownMenuLink">

@@ -8,18 +8,18 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
   dropdownVisible = false;
-  activeLanguage = 'en';
   languages: string[] = [
     'de',
     'en',
     'ua'
   ];
 
-  constructor(public translate: TranslateService) { }
+  constructor(public translate: TranslateService) {
+    translate.currentLang = 'en';
+  }
 
   chooseLanguage(language: string) {
     this.translate.use(language);
-    this.activeLanguage = language;
   }
 
   ngOnInit(): void {

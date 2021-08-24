@@ -22,7 +22,8 @@
             </div>
             <ul class="list-unstyled d-flex justify-content-between font-small text-muted my-4">
                 <li class="ps-4">{{'user.dateOfBirth' | translate}}</li>
-                <li>{{ user.dateOfBirth }}</li>
+                <li>{{ user.dateOfBirth | date: 'EEEE, dd MMMM yyyy, HH:mm:ss': undefined : translate.currentLang }}
+                </li>
             </ul>
         </div>
 
@@ -50,7 +51,7 @@
                     <tr>
                         <td class="font-weight-normal align-middle">{{'user.email' | translate}}</td>
                         <td class="float-end font-weight-normal">
-                            <a class="mb-1" [href]="[user.wikiUrl]"><span class="text-muted">{{ user.email }}</span></a>
+                            <a class="mb-1" [href]="[user.email]"><span class="text-muted">{{ user.email }}</span></a>
                         </td>
                         <td class="float-end me-3">
                             <i class="fas fa-palette fa-lg text-warning"></i>

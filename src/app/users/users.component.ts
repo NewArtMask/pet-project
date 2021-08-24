@@ -17,10 +17,13 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.usersService.getUsers(this.page)
       .subscribe(response => {
-        this.users = JSON.parse(JSON.stringify(response)).data;
+        const { data }: any = { ...response };
+        this.users = data;
         ++this.page;
-        console.log(this.users);
-      });
+      },
+        error => {
+          console.error('There was an error!', error);
+        });
   }
 
   onScroll() {
@@ -28,11 +31,14 @@ export class UsersComponent implements OnInit {
       this.waitOnResponse = true;
       this.usersService.getUsers(this.page)
         .subscribe(response => {
-          const data = JSON.parse(JSON.stringify(response)).data;
+          const { data }: any = { ...response };
           this.users.push(...data);
           ++this.page;
           this.waitOnResponse = false;
-        });
+        },
+          error => {
+            console.error('There was an error!', error);
+          });
     }
   }
 }
