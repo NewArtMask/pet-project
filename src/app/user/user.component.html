@@ -5,26 +5,25 @@
             <img class="card-title" src="{{ user.picture }}" alt="user">
             <p></p>
             <div class="d-flex justify-content-between mb-4">
-                <p><i class="fas fa-skull fa-lg text-info pe-2"></i>{{ 'user.title' | translate }}</p>
-                <p><i class="fas fa-ring fa-lg text-warning pe-2"></i>{{ user.title }}</p>
+                <p>{{ 'user.title' | translate }}</p>
+                <p>{{ user.title }}</p>
             </div>
             <div class="d-flex justify-content-between mb-4" style="margin-top: -25px">
-                <p><i class="fas fa-skull fa-lg text-info pe-2"></i>{{ 'user.firstName' | translate }}</p>
-                <p><i class="fas fa-ring fa-lg text-warning pe-2"></i>{{ user.firstName }}</p>
+                <p>{{ 'user.firstName' | translate }}</p>
+                <p>{{ user.firstName }}</p>
             </div>
             <div class="d-flex justify-content-between mb-4" style="margin-top: -25px">
-                <p><i class="fas fa-mercury fa-lg text-info pe-2"></i>{{ 'user.lastName' | translate }}</p>
-                <p><i class="fas fa-ring fa-lg text-warning pe-2"></i>{{ user.lastName }}</p>
+                <p>{{ 'user.lastName' | translate }}</p>
+                <p>{{ user.lastName }}</p>
             </div>
             <div class="progress">
                 <div class="progress-bar bg-black" role="progressbar" style="width: 100%;" aria-valuenow="40"
                     aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <ul class="list-unstyled d-flex justify-content-between font-small text-muted my-4">
-                <li class="ps-4">{{'user.dateOfBirth' | translate}}</li>
-                <li>{{ user.dateOfBirth | date: 'EEEE, dd MMMM yyyy, HH:mm:ss': undefined : translate.currentLang }}
-                </li>
-            </ul>
+            <div class="d-flex justify-content-between mb-4">
+                <p class="font-small text-muted my-4">{{'user.dateOfBirth' | translate}}</p>
+                <p>{{ user.dateOfBirth | date: 'EEEE, dd MMMM yyyy, HH:mm:ss': undefined : translate.currentLang }}</p>
+            </div>
         </div>
 
         <div>
@@ -35,17 +34,11 @@
                         <td class="float-end font-weight-normal">
                             <p class="mb-1"><span class="text-muted">{{ user.gender }}</span></p>
                         </td>
-                        <td class="float-end me-3">
-                            <i class="fas fa-house-user fa-lg text-warning"></i>
-                        </td>
                     </tr>
                     <tr>
                         <td class="font-weight-normal align-middle">{{'user.phone' | translate}}</td>
                         <td class="float-end font-weight-normal">
                             <p class="mb-1"><span class="text-muted">{{ user.phone }}</span></p>
-                        </td>
-                        <td class="float-end me-3">
-                            <i class="fas fa-crown text-warning"></i>
                         </td>
                     </tr>
                     <tr>
@@ -53,17 +46,11 @@
                         <td class="float-end font-weight-normal">
                             <a class="mb-1" [href]="[user.email]"><span class="text-muted">{{ user.email }}</span></a>
                         </td>
-                        <td class="float-end me-3">
-                            <i class="fas fa-palette fa-lg text-warning"></i>
-                        </td>
                     </tr>
                     <tr>
                         <td class="font-weight-normal align-middle">{{'user.location.homeAdress' | translate}}</td>
                         <td class="float-end font-weight-normal">
                             <p class="mb-1"><span class="text-muted">{{ user.location.homeAdress }}</span></p>
-                        </td>
-                        <td class="float-end me-3">
-                            <i class="fas fa-text-height fa-lg text-warning"></i>
                         </td>
                     </tr>
                     <tr>
@@ -75,9 +62,6 @@
                                 </span>
                             </p>
                         </td>
-                        <td class="float-end me-3">
-                            <i class="fas fa-solid fa-wifi fa-lg text-info"></i>
-                        </td>
                     </tr>
                     <tr>
                         <td class="font-weight-normal align-middle">{{'user.location.country' | translate}}</td>
@@ -86,9 +70,6 @@
                                     {{ user.location.country }}
                                 </span>
                             </p>
-                        </td>
-                        <td class="float-end me-3">
-                            <i class="fas fa-solid fa-wifi fa-lg text-info"></i>
                         </td>
                     </tr>
                     <tr>
@@ -99,9 +80,6 @@
                                 </span>
                             </p>
                         </td>
-                        <td class="float-end me-3">
-                            <i class="fas fa-solid fa-wifi fa-lg text-info"></i>
-                        </td>
                     </tr>
                     <tr>
                         <td class="font-weight-normal align-middle">{{'user.location.street' | translate}}</td>
@@ -111,9 +89,6 @@
                                 </span>
                             </p>
                         </td>
-                        <td class="float-end me-3">
-                            <i class="fas fa-solid fa-wifi fa-lg text-info"></i>
-                        </td>
                     </tr>
                     <tr>
                         <td class="font-weight-normal align-middle">{{'user.location.timezone' | translate}}</td>
@@ -122,9 +97,6 @@
                                     {{ user.location.timezone }}
                                 </span>
                             </p>
-                        </td>
-                        <td class="float-end me-3">
-                            <i class="fas fa-solid fa-wifi fa-lg text-info"></i>
                         </td>
                     </tr>
                 </tbody>
