@@ -12,7 +12,7 @@
     },
     "users": {
         "input": {
-            "placeholder": "Search..."
+            "placeholder": "Search text..."
         },
         "userInfo": "more..."
     },
@@ -35,5 +35,14 @@
     },
     "loader": {
         "loadingText": "Loading..."
+    },
+    "home": {
+        "requirements": "Requirements",
+        "first": "Create Components- {{componentsNames}}",
+        "second": "Add localization to any language other than English (add dropdown in header)",
+        "third": "On users page draw a table and the data are taken from the placeholder ({{numOfItems}} pcs) -> {{httpAdresse}}",
+        "fourth": "Lazy loading is implemented for Table, ie when the user scrolls it adds data to the table ({{numOfItems}} more pieces)",
+        "fifth": "Search for items by item (filter pipe)",
+        "sixth": "When the user clicks on the item in the table it gets to the item page so url will be {{urlForUserPage}}"
     }
 }

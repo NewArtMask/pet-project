@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
   users: any;
   waitOnResponse = false;
   filterTerm!: string;
+  userItem!: any
   constructor(private usersService: UsersService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
