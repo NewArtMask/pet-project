@@ -1,0 +1,51 @@
+<div class="container mt-5">
+
+    <div *ngIf="users;">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="{{ 'users.input.placeholder' | translate }}"
+                [(ngModel)]="filterTerm">
+        </div>
+
+
+        <div class="container" *ngFor="let user of users  | filter:filterTerm">
+            <section class="mx-auto my-5" style="max-width: 60%;">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-body__head">
+                            <div class="userpic">
+                                <img class="card-title" src="{{ user.picture }}" alt="user">
+                            </div>
+
+                            <div class="user-info">
+                                <div class="d-flex justify-content-start mb-4">
+                                    <p class="name-key text-muted">{{ 'user.title' | translate }}</p>
+                                    <p class="name-value">{{ user.title }}</p>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4" style="margin-top: -25px">
+                                    <p class="name-key text-muted">{{ 'user.firstName' | translate }}</p>
+                                    <p class="name-value">{{ user.firstName }}</p>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4" style="margin-top: -25px">
+                                    <p class="name-key text-muted">{{ 'user.lastName' | translate }}</p>
+                                    <p class="name-value">{{ user.lastName }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <a class="btn btn-link link-info p-md-1 my-1"
+                            [routerLink]="['../features/', user.id, user.firstName + '_' + user.lastName]">
+                            {{ 'users.userInfo' | translate }}
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <ng-template #noitem>No item to show</ng-template>
+        </div>
+    </div>
+</div>
+
+<div class="search-results" *ngIf="page" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()">{{'loader.loadingText' | translate}}
+</div>
+
+<app-loader></app-loader>

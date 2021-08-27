@@ -1,0 +1,48 @@
+{
+    "navbar": {
+        "home": "Home",
+        "users": "Users"
+    },
+    "button": {
+        "lang": {
+            "ua": "Українська",
+            "en": "English",
+            "de": "Deutsch"
+        }
+    },
+    "users": {
+        "input": {
+            "placeholder": "Search text..."
+        },
+        "userInfo": "more..."
+    },
+    "user": {
+        "title": "Title:",
+        "firstName": "First name:",
+        "lastName": "Last name:",
+        "dateOfBirth": "Date of birth:",
+        "gender": "Gender:",
+        "phone": "Phone:",
+        "email": "E-Mail:",
+        "location": {
+            "homeAdress": "Home adress:",
+            "city": "City/Town/Village:",
+            "country": "Country:",
+            "state": "State/Region:",
+            "street": "Street:",
+            "timezone": "Timezone:"
+        }
+    },
+    "loader": {
+        "loadingText": "Loading..."
+    },
+    "home": {
+        "requirements": "Requirements",
+        "first": "Create Components- {{componentsNames}}",
+        "second": "Add localization to any language other than English (add dropdown in header)",
+        "third": "On users page draw a table and the data are taken from the placeholder ({{numOfItems}} pcs) -> {{httpAdresse}}",
+        "fourth": "Lazy loading is implemented for Table, ie when the user scrolls it adds data to the table ({{numOfItems}} more pieces)",
+        "fifth": "Search for items by item (filter pipe)",
+        "sixth": "When the user clicks on the item in the table it gets to the item page so url will be {{urlForUserPage}}"
+    }
+}

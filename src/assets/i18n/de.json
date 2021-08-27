@@ -1,0 +1,48 @@
+{
+    "navbar": {
+        "home": "Startseite",
+        "users": "Benutzer"
+    },
+    "button": {
+        "lang": {
+            "ua": "Українська",
+            "en": "English",
+            "de": "Deutsch"
+        }
+    },
+    "users": {
+        "input": {
+            "placeholder": "Suchtext..."
+        },
+        "userInfo": "mehr..."
+    },
+    "user": {
+        "title": "Titel:",
+        "firstName": "Vorname:",
+        "lastName": "Nachname:",
+        "dateOfBirth": "Geburtsdatum:",
+        "gender": "Gender:",
+        "phone": "Telefon:",
+        "email": "E-Mail:",
+        "location": {
+            "homeAdress": "Privatadresse:",
+            "city": "Stadt/Dorf:",
+            "country": "Land:",
+            "state": "Bundesland:",
+            "street": "Straße:",
+            "timezone": "Zeitzone:"
+        }
+    },
+    "loader": {
+        "loadingText": "Wird geladen..."
+    },
+    "home": {
+        "requirements": "Anforderungen",
+        "first": "Komponenten erstellen- {{componentsNames}}",
+        "second": "Lokalisierung für jede andere Sprache als Englisch hinzufügen (Dropdown im Header hinzufügen)",
+        "third": "Auf der Usersseite eine Liste zeichnen und die Daten werden aus dem Platzhalter genommen ({{numOfItems}} Stck) -> {{httpAdresse}}",
+        "fourth": "Lazy Loading ist für Table implementiert, dh wenn der BenutzerIn scrollt, fügt sie/er Daten zur Liste hinzu ({{numOfItems}} weitere Stücke)",
+        "fifth": "Nach einem Element anhand des eingegebenen Textes suchen (Filterpipe)",
+        "sixth": "Wenn der BenutzerIn auf den Item in der Liste klickt, gelangt er/sie auf die Artikelseite, sodass die URL lautet {{urlForUserPage}}"
+    }
+}

@@ -1,0 +1,57 @@
+<header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-dark">
+        <div class="container-fluid" (clickOutside)="menuVisible = false">
+            <!-- Logo -->
+            <a class="navbar-brand" href="/">
+                <img src="../assets/pictures/angular logo.png" height="50" alt="logo" loading="lazy" />
+                PET-Project
+            </a>
+            <!-- Sandwich menu -->
+            <button class="navbar-toggler" type="button" aria-controls="navbarExample01" aria-expanded="false"
+                aria-label="Toggle navigation" (click)="menuVisible = !menuVisible">
+                <i class="fas fa-bars text-light" [ngClass]="{'text-muted': changeColorSandwich}"
+                    (mouseenter)="changeColorSandwich=true" (mouseleave)="changeColorSandwich=false"></i>
+            </button>
+            <!-- Navbar menu -->
+            <div class="navbar-collapse" [ngClass]="{'collapse': !menuVisible}" id="navbarExample01">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link text-light" [ngClass]="{'text-muted': changeColorHome}" aria-current="page"
+                            routerLink="" (mouseenter)="changeColorHome=true" (mouseleave)="changeColorHome=false"
+                            (click)="menuVisible = !menuVisible"><i class="fas fa-solid fa-home"></i><span
+                                class="menu-item hidden">
+                                {{ 'navbar.home' | translate }}</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" [ngClass]="{'text-muted': changeColorUsers}" routerLink="users"
+                            (mouseenter)="changeColorUsers=true" (mouseleave)="changeColorUsers=false"
+                            (click)="menuVisible = !menuVisible"><i class="fas fa-solid fa-users"></i><span
+                                class="menu-item hidden">
+                                {{ 'navbar.users' | translate }}</span>
+                        </a>
+                    </li>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" [ngClass]="{'text-muted': changeColorLanguages}"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false"
+                            (click)="dropdownVisible = !dropdownVisible" (clickOutside)="dropdownVisible = false"
+                            (mouseenter)="changeColorLanguages=true" (mouseleave)="changeColorLanguages=false"><i
+                                class="fas fa-solid fa-language"></i><span class="menu-item hidden">
+                                {{ 'button.lang.' + translate.currentLang | translate }}
+                            </span></a>
+                        <ul class="dropdown-menu" [ngClass]="{'dropdownHide': !dropdownVisible}"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li *ngFor="let language of languages">
+                                <a id="{{language}}" class="dropdown-item" (click)="chooseLanguage(language)">
+                                    {{'button.lang.' + language | translate}}
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,40 @@
+body {
+    background-color: #f5f7fa;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.userpic img {
+    width: 100px;
+}
+
+.name-item {
+    font-size: 1.3rem;
+}
+
+.table,
+.card-body {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .my-5 {
+        max-width: 90% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .my-5 {
+        max-width: 100% !important;
+    }
+
+    .table tr {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,108 @@
+<section *ngIf="user" class="mx-auto my-5" style="max-width: 70%;">
+
+    <div class="card">
+        <div class="card-body">
+            <div class="userpic">
+                <img class="card-title" src="{{ user.picture }}" alt="user">
+            </div>
+            <div class="mb-1 name-item">
+                {{user.title}}. {{ user.firstName }} {{ user.lastName }}
+            </div>
+
+        </div>
+
+        <div>
+            <table class="table table-borderless table-sm mb-0">
+                <tbody>
+                    <tr>
+                        <td class="font-weight-normal align-middle text-muted">{{'user.dateOfBirth' | translate}}</td>
+                        <td class="float-start font-weight-normal">
+                            <p class="mb-1"><span class="">{{ user.dateOfBirth | date: 'EEEE, dd MMMM yyyy, HH:mm:ss':
+                                    undefined : translate.currentLang }}</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-normal align-middle text-muted">{{'user.gender' | translate}}</td>
+                        <td class="float-start font-weight-normal">
+                            <p class="mb-1"><span class="">{{ user.gender }}</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-normal align-middle text-muted">{{'user.phone' | translate}}</td>
+                        <td class="float-start font-weight-normal">
+                            <p class="mb-1"><span class="">{{ user.phone }}</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-normal align-middle text-muted">{{'user.email' | translate}}</td>
+                        <td class="float-start font-weight-normal">
+                            <a class="mb-1" [href]="[user.email]"><span class="">{{ user.email }}</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-normal align-middle text-muted" style="text-decoration: underline;">
+                            {{'user.location.homeAdress' | translate}}</td>
+                        <td class="float-start font-weight-normal">
+                            <p class="mb-1"><span class="">{{ user.location.homeAdress }}</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-normal align-middle text-muted">{{'user.location.city' | translate}}</td>
+                        <td class="float-start font-weight-normal">
+                            <p class="mb-1">
+                                <span class="">
+                                    {{ user.location.city }}
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-normal align-middle text-muted">{{'user.location.country' | translate}}
+                        </td>
+                        <td class="float-start font-weight-normal">
+                            <p class="mb-1"><span class="">
+                                    {{ user.location.country }}
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-normal align-middle text-muted">{{'user.location.state' | translate}}
+                        </td>
+                        <td class="float-start font-weight-normal">
+                            <p class="mb-1"><span class="">
+                                    {{ user.location.state }}
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-normal align-middle text-muted">{{'user.location.street' | translate}}
+                        </td>
+                        <td class="float-start font-weight-normal">
+                            <p class="mb-1"><span class="">
+                                    {{ user.location.street }}
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-weight-normal align-middle text-muted">{{'user.location.timezone' | translate}}
+                        </td>
+                        <td class="float-start font-weight-normal">
+                            <p class="mb-1"><span class="">
+                                    {{ user.location.timezone }}
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<app-loader></app-loader>
