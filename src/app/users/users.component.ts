@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { UsersService } from '../service/users.service';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-users',
@@ -12,14 +12,16 @@ export class UsersComponent implements OnInit {
   users: any;
   waitOnResponse = false;
   filterTerm!: string;
-  constructor(private usersService: UsersService, public translate: TranslateService) { }
+  constructor(private usersService: UsersService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.usersService.getUsers(this.page)
       .subscribe(response => {
         const { data }: any = { ...response };
         this.users = data;
         ++this.page;
+        this.spinner.hide();
       },
         error => {
           console.error('There was an error!', error);

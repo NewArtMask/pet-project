@@ -1,28 +1,35 @@
 <div class="container mt-5">
 
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="{{ 'users.input.placeholder' | translate }}"
-            [(ngModel)]="filterTerm">
-    </div>
-
     <div *ngIf="users">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="{{ 'users.input.placeholder' | translate }}"
+                [(ngModel)]="filterTerm">
+        </div>
+
+
         <div class="container" *ngFor="let user of users  | filter:filterTerm">
-            <section class="mx-auto my-5" style="max-width: 70%;">
+            <section class="mx-auto my-5" style="max-width: 60%;">
                 <div class="card">
                     <div class="card-body">
-                        <img class="card-title" src="{{ user.picture }}" alt="user">
-                        <p></p>
-                        <div class="d-flex justify-content-between mb-4">
-                            <p><i class="fas fa-skull fa-lg text-info pe-2"></i>{{ 'user.title' | translate }}</p>
-                            <p><i class="fas fa-ring fa-lg text-warning pe-2"></i>{{ user.title }}</p>
-                        </div>
-                        <div class="d-flex justify-content-between mb-4" style="margin-top: -25px">
-                            <p><i class="fas fa-skull fa-lg text-info pe-2"></i>{{ 'user.firstName' | translate }}</p>
-                            <p><i class="fas fa-ring fa-lg text-warning pe-2"></i>{{ user.firstName }}</p>
-                        </div>
-                        <div class="d-flex justify-content-between mb-4" style="margin-top: -25px">
-                            <p><i class="fas fa-mercury fa-lg text-info pe-2"></i>{{ 'user.lastName' | translate }}</p>
-                            <p><i class="fas fa-ring fa-lg text-warning pe-2"></i>{{ user.lastName }}</p>
+                        <div class="card-body__head">
+                            <div class="userpic">
+                                <img class="card-title" src="{{ user.picture }}" alt="user">
+                            </div>
+
+                            <div class="user-info">
+                                <div class="d-flex justify-content-start mb-4">
+                                    <p class="name-key text-muted">{{ 'user.title' | translate }}</p>
+                                    <p class="name-value">{{ user.title }}</p>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4" style="margin-top: -25px">
+                                    <p class="name-key text-muted">{{ 'user.firstName' | translate }}</p>
+                                    <p class="name-value">{{ user.firstName }}</p>
+                                </div>
+                                <div class="d-flex justify-content-start mb-4" style="margin-top: -25px">
+                                    <p class="name-key text-muted">{{ 'user.lastName' | translate }}</p>
+                                    <p class="name-value">{{ user.lastName }}</p>
+                                </div>
+                            </div>
                         </div>
                         <hr />
                         <a class="btn btn-link link-info p-md-1 my-1"
@@ -35,5 +42,9 @@
         </div>
     </div>
 </div>
-<div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
-    (scrolled)="onScroll()"></div>
+
+<div class="search-results" *ngIf="page" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()">{{'loader.loadingText' | translate}}
+</div>
+
+<app-loader></app-loader>

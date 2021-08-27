@@ -32,5 +32,8 @@
             "street": "Straße:",
             "timezone": "Zeitzone:"
         }
+    },
+    "loader": {
+        "loadingText": "Wird geladen..."
     }
 }
