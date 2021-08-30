@@ -23,10 +23,7 @@ export class UsersComponent implements OnInit {
         this.users = data;
         ++this.page;
         this.spinner.hide();
-      },
-        error => {
-          console.error('There was an error!', error);
-        });
+      });
   }
 
   onScroll() {
@@ -38,10 +35,7 @@ export class UsersComponent implements OnInit {
           this.users.push(...data);
           ++this.page;
           this.waitOnResponse = false;
-        },
-          error => {
-            console.error('There was an error!', error);
-          });
+        });
     }
   }
 }

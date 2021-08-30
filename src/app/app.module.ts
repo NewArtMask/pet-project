@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -19,6 +19,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ClickOutsideDirective } from './click-outside.directive';
 import { LoaderComponent } from './components/loading/loader/loader.component';
+import { Interceptor } from './service/interceptor';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -54,8 +55,8 @@ export function createTranslateLoader(http: HttpClient) {
       defaultLanguage: 'en'
     })
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], // For loader
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }], // For interceptor
   bootstrap: [AppComponent]
 })
 export class AppModule { }

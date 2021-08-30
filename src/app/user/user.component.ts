@@ -35,10 +35,7 @@ export class UserComponent implements OnInit {
         .subscribe(response => {
           this.spinner.hide();
           this.user = response;
-        },
-          error => {
-            console.error('There was an error!', error);
-          });
+        });
     });
   }
 
